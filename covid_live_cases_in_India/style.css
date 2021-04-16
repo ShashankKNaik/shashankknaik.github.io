@@ -1,0 +1,64 @@
+.top{
+    background-color:#008dc9;
+    margin-top: 8px;
+    padding: 10px;
+}
+
+.mid{
+    background-color:#d82138;
+    padding: 5px 50px;
+    margin-bottom: 8px;
+}
+.top,.mid{
+    color: white;
+}
+.india,.state{
+    border-right: 3px solid #d82138;
+}
+.row{
+    margin: 0;
+}
+h3,.lable{
+    color: #3c4245;
+    display: inline;
+}
+.details{
+    height: 150px;
+    background-color: whitesmoke;
+    border-bottom: 3px solid #d82138;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.form-control{
+    width: 70%;
+    display: inline;
+}
+#api,a{
+    background-color: #008dc9;
+    color: white;
+    padding: 10px 20px;
+}
+.row h1{
+    color: #d82138;
+}
+.row .lable{
+    font-size:large;
+    color: #3c4245;
+}
+.footer{
+    background-color: #262626;
+    padding: 8px;
+}
+
+.fa-linkedin,.fa-github {
+    background: #262626;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+  }
+  .fa-linkedin:hover,.fa-github:hover {
+    background: #151414;
+    color: white;
+    text-decoration: none;
+  }
+ 
