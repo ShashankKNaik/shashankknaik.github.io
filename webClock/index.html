@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="clock.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>webClock</title>
+    <style>
+        #im,body{
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+        }
+        .main,#h,#m,#s{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            height: 500px;
+            width: 500px;
+        }
+        #im{
+            height: 100%;
+            width: 100%;
+        }
+        #h{
+            height: 30%;
+            width: 30%;
+        }
+        #m{
+            height: 40%;
+            width: 40%;
+        }
+        #s{
+            height: 50%;
+            width: 50%;
+            
+        }
+        .arrow{
+            height: 50%;
+            width: 10px;
+            background-color: black;
+            border: 2px solid rgb(255, 255, 255);
+        }
+        @media screen and (max-width:516px) {
+            .main{
+                height: 300px;
+                width: 300px;
+            }
+            .arrow{
+                width: 5px;
+                border: 1px solid rgb(255, 255, 255);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img id="im" src="clock.svg" alt="Loading.......">
+        <div id="s">
+            <div class="arrow"></div>
+        </div>
+        <div id="m">
+            <div class="arrow"></div>
+        </div>
+        <div id="h">
+            <div class="arrow"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+    rotator();
+    setInterval(rotator,1000);
+    function rotator(){
+        var date = new Date();
+        var sc=date.getSeconds(),hc=date.getHours(),mc=date.getMinutes();
+        $('#s').css({
+            transform: 'translate(-50%,-50%) rotate('+(360/60)*sc+'deg)'
+        })
+        $('#m').css({
+            transform: 'translate(-50%,-50%) rotate('+(360/60)*mc+'deg)'
+        })
+        $('#h').css({
+            transform: 'translate(-50%,-50%) rotate('+(360/60)*hc+'deg)'
+        }) 
+    }
+
+</script>
+
+</html>
