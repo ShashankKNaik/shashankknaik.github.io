@@ -12,8 +12,9 @@
             height: 100vh;
             width: 100%;
             margin: 0;
+            overflow: hidden;
         }
-        .main,#h,#m,#s{
+        .main,#h,#m,#s,.bg{
             position: absolute;
             top: 50%;
             left: 50%;
@@ -24,6 +25,10 @@
         .main{
             height: 500px;
             width: 500px;
+        }
+        .bg{
+            height:1200px;
+            width: 1200px;
         }
         #im{
             height: 100%;
@@ -48,6 +53,20 @@
             background-color: black;
             border: 2px solid rgb(255, 255, 255);
         }
+        .bg{
+            animation-name: rotate;
+            animation-duration: 60s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes rotate {
+            from{
+                transform: translate(-50%,-50%) rotate(0deg);
+            }
+            to{
+                transform: translate(-50%,-50%) rotate(360deg);
+            }
+        }
         @media screen and (max-width:516px) {
             .main{
                 height: 300px;
@@ -57,11 +76,19 @@
                 width: 5px;
                 border: 1px solid rgb(255, 255, 255);
             }
+            .bg{
+                height:700px;
+                width: 700px;
+            }
+            :window-inactive{
+                overflow: hidden;
+            }
         }
         
     </style>
 </head>
 <body>
+    <img class="bg" src="bg.svg" alt="Loading.......">
     <div class="main">
         <img id="im" src="clock.svg" alt="Loading.......">
         <div id="s">
